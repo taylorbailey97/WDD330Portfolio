@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 02 Notes - Taylor Bailey Portfolio</title>
+</head>
+<style>
+
+</style>
+<body style="max-width: 500px;">
+    <a href="./landing_w1.html">back</a>
+    <h3>Here's the first exercise: </h3>
+    <h5>The code</h5>
+    <PRE>
+const quiz = [
+    ["What is Superman's real name?","Clark Kent"],
+    ["What is Wonder Woman's real name?","Diana Prince"],
+    ["What is Batman's real name?","Bruce Wayne"]
+]
+let score = 0
+for(const [question,answer] of quiz){
+    const response = prompt(question);
+    if(response === answer){
+        alert('Correct!');
+        score++;
+    } else {
+        alert(`Wrong! The correct answer was ${answer}`);
+}
+
+alert(`Game Over, you scored ${score} point${score !== 1 ? 's' : ''}`);
+    </PRE>
+    <p>Below is an image of the results of running the game: </p>
+    <img src="./example 1.PNG" alt="example 1" style="height: 500px;">
+
+    <h3>Here's the second exercise: </h3>
+    <h5>The code</h5>
+    <PRE>
+const quiz = [
+    ["What is Superman's real name?","Clark Kent"],
+    ["What is Wonder Woman's real name?","Diana Prince"],
+    ["What is Batman's real name?","Bruce Wayne"]
+];
+function start(quiz){
+    let score = 0;
+    // main game loop
+    for(const [question,answer] of quiz){
+        const response = ask(question);
+        check(response,answer);
+    }
+    // end of main game loop
+    gameOver();
+    // function declarations
+    function ask(question){
+        return prompt(question);
+    }
+    function check(response,answer){
+        if(response === answer){
+        alert('Correct!');
+        score++;
+        } else {
+        alert(`Wrong! The correct answer was ${answer}`);
+        }
+    }
+    function gameOver(){
+        alert(`Game Over, you scored ${score} point${score !== 1 ? 's' : ''}`);
+    }
+}
+start(quiz);
+    </PRE>
+    <p>Here are some images of this exercise. It's exactly the same as the first example.</p>
+    <img src="./example 2.PNG" alt="example 2">
+    <img src="./example 3.PNG" alt="example 3">
+</body>
+</html>
