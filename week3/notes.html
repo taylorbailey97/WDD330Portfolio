@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 02 Notes - Taylor Bailey Portfolio</title>
+</head>
+<style>
+img {
+    max-height: 500px;
+}
+</style>
+<body style="max-width: 500px;">
+    <a href="./landing_w3.html">back</a>
+    <h3>Here's the first exercise: </h3>
+    <h5>The code</h5>
+    <PRE>
+let calculator = {
+num: {},
+read() {
+  this.num.first = prompt("Please enter the first number");
+  this.num.second = prompt("Please enter the second number");
+},
+  
+sum() {
+  return parseInt(this.num.first) + parseInt(this.num.second);
+},
+  
+mul() {
+  return this.num.first * this.num.second;
+}
+  
+};
+    </PRE>
+    <p>Below is an image of the results: </p>
+    <img src="./example1.PNG" alt="example 1">
+
+    <h3>Here's the second exercise: </h3>
+    <h5>The code</h5>
+    <PRE>
+let ladder = {
+  step: 0,
+  up() {
+    this.step++;
+    return this;
+  },
+  down() {
+    this.step--;
+    return this;
+  },
+  showStep: function() { // shows the current step
+    alert( this.step );
+    return this;
+  }
+};
+    </PRE>
+    <p>Here are the results for this exercise</p>
+    <img src="./example2.PNG" alt="example 2">
+</body>
+</html>
