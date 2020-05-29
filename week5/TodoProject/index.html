@@ -5,25 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Taylor Bailey Portfolio - TODO list</title>
     <link rel="stylesheet" href="./main.css">
+    <link href="./node_modules/@fortawesome/fontawesome-free/css/fontawesome.css" rel="stylesheet">
 </head>
 <body>
     <h1>TODO App</h1>
-    <ul id="todoList" class="todo">
-        <li>
-            <label id="1" class="container" onclick="check()" >
-                <span class="checkmark"></span>
-            </label>
-            <h2>Task Name</h2>
-            <button>X</button>
-        </li>
-        <li>
-            <label id="2" class="container" onclick="check()" >
-                <span class="checkmark"></span>
-            </label>
-            <h2>Task Name</h2>
-            <button>X</button>
-        </li>
-    </ul>
-    <script src="main.js"></script>
+
+    <div id="myDIV" class="header">
+      <h2>ToDos</h2>
+      <input type="text" id="myInput" placeholder="Task name...">
+      <span id="addBtn" class="addBtn">Add</span>
+    </div>
+    <div class="filter" id="filter">
+      <ul>
+        <li class="selected">All</li>
+        <li>Active</li>
+        <li>Completed</li>
+      </ul>
+    </div>
+    <div id="todoList">
+      <ul>
+  
+      </ul>
+    </div>
+    <script src="./todos.js" type="module"></script>
+    <script src="utilities.js" type="module"></script>
 </body>
 </html>

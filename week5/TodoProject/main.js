@@ -1,21 +1,34 @@
-// function renderTodoItem(task) {
-//   const item = document.createElement("li");
+const taskList = [
+    {
+      name: 'Load Dishes'
+    }
+];
 
-//   item.innerHTML = ` <h2>${hike.name}</h2>
-//         <div class="image"><img src="${imgBasePath}${hike.imgSrc}" alt="${hike.imgAlt}"></div>
-//         <div>
-//                 <div>
-//                     <h3>Distance</h3>
-//                     <p>${hike.distance}</p>
-//                 </div>
-//                 <div>
-//                     <h3>Difficulty</h3>
-//                     <p>${hike.difficulty}</p>
-//                 </div>
-//         </div>`;
+window.addEventListener('load', renderTodoList)
 
-//   return item;
-// }
+function renderTodoList() {
+    taskList.forEach(task => {
+        document.getElementById('todoList').appendChild(renderTodoItem(task));
+    });
+}
+
+function deleteTask(name) {
+    index = taskList.indexOf(name);
+    taskList.splice(index, 1);
+    renderTodoList();
+}
+
+function renderTodoItem(task) {
+  const item = document.createElement("li");
+
+  item.innerHTML = `
+            <label class="container">
+            </label>
+            <h2>${ task.name }</h2>
+            <button onClick="deleteTask(\' ${ task.name } \')"><i class="fas fa-trash"></i></button>`;
+
+  return item;
+}
 
 const checkBox = document.querySelector('.todo');
 
@@ -23,11 +36,5 @@ checkBox.addEventListener('click', check)
 
 function check(e) {
     let element = e.target;
-    console.log(element);
-    if (element.children[0].tagName == 'SPAN') {
-        element.classList.toggle("checked");
-        element.children[0].innerHTML == 'X' 
-        ? element.children[0].innerHTML = '' 
-        : element.children[0].innerHTML = 'X';
-    }
+    element.classList.toggle("checked");
 }
