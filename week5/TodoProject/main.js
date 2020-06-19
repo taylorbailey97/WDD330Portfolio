@@ -14,6 +14,7 @@ function renderTodoList() {
 
 function deleteTask(name) {
     index = taskList.indexOf(name);
+    console.log(index);
     taskList.splice(index, 1);
     renderTodoList();
 }
