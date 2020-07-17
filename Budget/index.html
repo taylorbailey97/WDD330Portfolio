@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wedding budgeter</title>
+    <link rel="stylesheet" href="./main.css">
+</head>
+<body>
+    <h1>Wedding Budget</h1>
+    <!-- <main> -->
+    <div class="main">
+        <section class="mainlist">
+            <div>
+                <a href="#" id="addItem">Add Item</a>
+            </div>
+            <div>
+                <ul id="itemList">
+                    <li>
+                        <h5>Store name</h5>
+                        <p class="red">-$990.00</p>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <section id="side" class="sideMenu">
+            <div class="amounts">
+                <div class="headers">
+                    <h5>Current:</h5>
+                    <h5>Spent:</h5>
+                </div>
+                <div class="values">
+                    <p class="green" id="current" >$3,100.00</p>
+                    <p class="red" id="spent" >$990.00</p>
+                </div>
+            </div>
+            <div id="detail" class="detail">
+                
+            </div>
+        </section>
+    </div>
+    <!-- </main> -->
+    <script src="./main.js" type="module"></script>
+    <script src="./budgetList.js" type="module"></script>
+</body>
+</html>
