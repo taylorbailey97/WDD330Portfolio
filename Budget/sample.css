@@ -1,0 +1,76 @@
+html, * {
+    padding: 0;
+    margin: 0;
+}
+
+h1 {
+    background-color: #537895;
+    background-image: linear-gradient(315deg, #537895 0%, #09203f 74%);
+    text-align: center;
+    padding: 20px;
+    color: white;
+    font-family: 'Inter', sans-serif;
+}
+
+.sideMenu {
+    padding: 30px 0px;
+    margin-top: 5px;
+}
+
+.headers, .values {
+    display: flex;
+    justify-content: space-around;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+}
+
+.headers {
+    font-size: 1.3em;
+}
+
+.values {
+    color: red;
+}
+
+#addItem {
+    padding: 20px;
+    text-align: center;
+    // background-color: #F5F9E9;
+    box-shadow: 10px 5px 25px grey;
+    // border-top: 1px black solid;
+    // border-bottom: 1px black solid;
+    margin: 5px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.3em;
+    color: black;
+    font-family: 'Inter', sans-serif;
+}
+
+#itemList li {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    color: #F5F9E9;
+    font-family: 'Inter', sans-serif;
+    border-top: 1px black solid;
+    border-bottom: 1px black solid;
+    box-shadow: 10px 5px 20px grey;
+    margin-bottom: 1px;
+    font-weight: 600;
+}
+
+#itemList li h5 {
+    // font-family: 'Josefin Sans', sans-serif;
+    font-size: 1.2em;
+}
+
+.green {
+    background-color: #045de9;
+    background-image: linear-gradient(315deg, #045de9 0%, #09c6f9 74%);
+}
+
+.red {
+    background-color: #c62128;
+    background-image: linear-gradient(147deg, #c62128 0%, #a00000 74%);
+}

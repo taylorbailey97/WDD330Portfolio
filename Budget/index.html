@@ -4,25 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wedding budgeter</title>
-    <link rel="stylesheet" href="./main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="./main.css"> -->
 </head>
 <body>
     <h1>Wedding Budget</h1>
     <!-- <main> -->
     <div class="main">
-        <section class="mainlist">
-            <div>
-                <a href="#" id="addItem">Add Item</a>
-            </div>
-            <div>
-                <ul id="itemList">
-                    <li>
-                        <h5>Store name</h5>
-                        <p class="red">-$990.00</p>
-                    </li>
-                </ul>
-            </div>
-        </section>
         <section id="side" class="sideMenu">
             <div class="amounts">
                 <div class="headers">
@@ -30,15 +18,25 @@
                     <h5>Spent:</h5>
                 </div>
                 <div class="values">
-                    <p class="green" id="current" >$3,100.00</p>
-                    <p class="red" id="spent" >$990.00</p>
+                    <p id="current" >$3,100.00</p>
+                    <p id="spent" >$990.00</p>
                 </div>
             </div>
             <div id="detail" class="detail">
                 
             </div>
         </section>
+        <section class="mainlist">
+            <div id="addItem">&#43; Add Item</div>
+            <div>
+                <ul id="itemList">
+                </ul>
+            </div>
+        </section>
     </div>
+    <footer>
+        Taylor Bailey
+    </footer>
     <!-- </main> -->
     <script src="./main.js" type="module"></script>
     <script src="./budgetList.js" type="module"></script>

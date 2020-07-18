@@ -6,7 +6,7 @@ export default class Budget {
 
     constructor() {
         this.id = Date.now();
-        this.list = JSON.parse(window.localStorage.getItem('budget'));
+        this.list = JSON.parse(window.localStorage.getItem('budget')) || [];
     }
 
     loadList() {
@@ -35,10 +35,10 @@ export default class Budget {
       let p = document.createElement('p');
       let className = item.negative ? 'green' : 'red';
       li.id = item.id;
-      p.classList.add(className);
+      li.classList.add(className);
       li.classList.add('item');
       h5.appendChild(document.createTextNode(item.storeName));
-      p.appendChild(document.createTextNode('$' + item.value));
+      p.appendChild(document.createTextNode('$' + parseFloat(item.value).toFixed(2)));
       li.appendChild(h5);
       li.appendChild(p);
       return li;
@@ -50,8 +50,8 @@ export default class Budget {
         if (parseFloat(item.value) < 0)
           spent += parseFloat(item.value);
       });
-      document.getElementById('current').innerHTML = '$' + (4000 + spent);
-      document.getElementById('spent').innerHTML = '$' + spent;
+      document.getElementById('current').innerHTML = '$' + (4000 + spent).toFixed(2);
+      document.getElementById('spent').innerHTML = '$' + spent.toFixed(2);
     }
 
     loadDetails(item) {
@@ -59,14 +59,16 @@ export default class Budget {
       let className = item.negative ? 'green' : 'red';
       div.innerHTML = '';
       div.innerHTML = `
-        <button>Delete</button>
-        <h4>${item.date}</h4>
+        <div class="item-detail">
+        <h4 class="item-date">${item.date}</h4>
         <h4>Store Name:</h4>
-        <p>${item.storeName}</p>
+        <p class="item-name">${item.storeName}</p>
         <h5>Amount:</h5>
         <p class="${className}">$${item.value}</p>
         <h5>Details:</h5> 
-        <p>${item.desc}</p>
+        <p class="item-desc">${item.desc}</p>
+        <button>Delete</button>
+        </div>
       `;
       document.querySelector('button').addEventListener('click', () => {
         this.removeItem(item.id);

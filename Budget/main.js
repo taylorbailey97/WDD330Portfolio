@@ -14,11 +14,15 @@ function addItemForm() {
         <input type="text" name="store" id="storeInput">
         <label for="amount">Amount:</label>
         <input type="number" name="amount" id="amountInput"></input>
-        <label for="pDate">Purchase Date:</label>
+        <label for="pDate">Purchase Date:</label><br>
         <input type="date" id="pDate" name="pDate">
         <p>Description:</p>
-        <textarea name="desc" id="desc" cols=54 rows=5 ></textarea>
-        <input type="submit" id="submit"></input>
+        <textarea name="desc" id="desc"></textarea>
+        <br>
+        <input type="submit" id="submit" value="Submit"></input>
+        <br>
+        <a id="cancel">Cancel</a>
     `
     document.getElementById("submit").addEventListener('click', () => budget.newItem());
+    document.getElementById("cancel").addEventListener('click', () => document.getElementById('detail').innerHTML = '');
 }
