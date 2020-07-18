@@ -11,7 +11,10 @@ export default class Budget {
 
     loadList() {
       document.getElementById("itemList").innerHTML = "";
-      this.list.forEach(item => {
+      const sortList = this.list.slice().sort((a, b) => {
+        return Date.parse(b.date) - Date.parse(a.date);
+      });
+      sortList.forEach(item => {
         document.getElementById("itemList").appendChild(this.loadItem(item));
       });
       this.loadValues();
@@ -46,11 +49,14 @@ export default class Budget {
 
     loadValues() {
       let spent = 0;
+      let budget = 0;
       this.list.forEach(item => {
         if (parseFloat(item.value) < 0)
           spent += parseFloat(item.value);
+        else 
+          budget += parseFloat(item.value);
       });
-      document.getElementById('current').innerHTML = '$' + (4000 + spent).toFixed(2);
+      document.getElementById('current').innerHTML = '$' + (budget + spent).toFixed(2);
       document.getElementById('spent').innerHTML = '$' + spent.toFixed(2);
     }
 
@@ -59,20 +65,68 @@ export default class Budget {
       let className = item.negative ? 'green' : 'red';
       div.innerHTML = '';
       div.innerHTML = `
-        <div class="item-detail">
-        <h4 class="item-date">${item.date}</h4>
+        <div class="item-detail ${className}">
+        <p class="item-date">Date: ${item.date}</p>
         <h4>Store Name:</h4>
         <p class="item-name">${item.storeName}</p>
-        <h5>Amount:</h5>
-        <p class="${className}">$${item.value}</p>
-        <h5>Details:</h5> 
+        <h4>Amount:</h4>
+        <p>$${parseFloat(item.value).toFixed(2)}</p>
+        <h4>Details:</h4> 
         <p class="item-desc">${item.desc}</p>
-        <button>Delete</button>
+        <div id="delete" >Delete</div>
+        <div class="buttons">
+          <div id="edit" > Edit</div>
+          <div id="cancel">Cancel</div>
+        </div>
         </div>
       `;
-      document.querySelector('button').addEventListener('touchend', () => {
+      document.getElementById('delete').addEventListener('click', () => {
         this.removeItem(item.id);
       });
+      // document.getElementById('delete').addEventListener('touchend', () => {
+      //   this.removeItem(item.id);
+      // });
+      document.getElementById('cancel').addEventListener('click', () => {
+        document.getElementById('detail').innerHTML = '';
+      });
+      // document.getElementById('cancel').addEventListener('touchend', () => {
+      //   document.getElementById('detail').innerHTML = '';
+      // });
+      document.getElementById('edit').addEventListener('click', () => {
+        this.editItem(item);
+      });
+    }
+
+    editItem(item) {
+      const div = document.getElementById('detail');
+      div.innerHTML = '';
+      div.innerHTML = `
+          <label for="store">Store Name:</label>
+          <input type="text" name="store" id="storeInput" value="${item.storeName}">
+          <label for="amount">Amount:</label>
+          <input type="number" name="amount" id="amountInput" value="${item.value}"></input>
+          <label for="pDate">Purchase Date:</label><br>
+          <input type="date" id="pDate" name="pDate" value="${item.date}">
+
+          <p>Description:</p>
+          <textarea name="desc" id="desc">${item.desc}</textarea>
+          <br>
+          <input type="submit" id="submit" value="Submit"></input>
+          <br>
+          <a id="cancel">Cancel</a>
+      `
+      // document.getElementById("submit").addEventListener('touchend', () => budget.newItem());
+      document.getElementById("submit").addEventListener('click', () => {
+        item.store = document.getElementById('storeInput').value;
+        item.value = document.getElementById('amountInput').value;
+        item.date = document.getElementById('pDate').value;
+        item.desc = document.getElementById('desc').value;
+        this.list = this.list.filter(el => el.id != item.id);
+        this.newItem(item);
+        document.getElementById('detail').innerHTML = '';
+      });
+      // document.getElementById("cancel").addEventListener('touchend', () => document.getElementById('detail').innerHTML = '');
+      document.getElementById("cancel").addEventListener('click', () => document.getElementById('detail').innerHTML = '');
     }
 
     removeItem(id) {

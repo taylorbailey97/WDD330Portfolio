@@ -67,10 +67,10 @@ export default class Budget {
         <p class="${className}">$${item.value}</p>
         <h5>Details:</h5> 
         <p class="item-desc">${item.desc}</p>
-        <button>Delete</button>
+        <div id="delete">Delete</div>
         </div>
       `;
-      document.querySelector('button').addEventListener('touchend', () => {
+      document.getElementById('delete').addEventListener('touchend', () => {
         this.removeItem(item.id);
       });
     }

@@ -1,84 +1,88 @@
-html, * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+@media only screen and (min-width: 650px) {
+  .main {
+    width: 400px;
+    margin: 0 auto;
+  }
+}
+
+html,
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
 }
 
 h1 {
-    background-color: #537895;
-    background-image: linear-gradient(315deg, #537895 0%, #09203f 74%);
-    text-align: center;
-    padding: 20px;
-    color: white;
-    font-family: 'Inter', sans-serif;
+  background-color: #537895;
+  background-image: linear-gradient(315deg, #537895 0%, #09203f 74%);
+  text-align: center;
+  padding: 20px;
+  color: white;
+  font-family: "Inter", sans-serif;
 }
-
-
-
 
 .sideMenu {
-    padding: 30px 0px;
-    margin-top: 5px;
+  padding: 30px 0px;
+  margin-top: 5px;
 }
 
-.headers, .values {
-    display: flex;
-    justify-content: space-around;
-    font-family: 'Inter', sans-serif;
-    font-weight: 600;
+.headers,
+.values {
+  display: flex;
+  justify-content: space-around;
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
 }
 
 .headers {
-    font-size: 1.3em;
+  font-size: 1.3em;
 }
 
 .values {
-    color: red;
+  color: red;
 }
-
-
 
 #addItem {
-    padding: 20px;
-    text-align: center;
-    box-shadow: 10px 5px 25px grey;
-    margin: 5px;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 1.3em;
-    color: black;
-    font-family: 'Inter', sans-serif;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 10px 5px 25px grey;
+  margin: 5px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.3em;
+  color: black;
+  font-family: "Inter", sans-serif;
 }
 
-
-
+#itemList {
+  overflow-y: scroll;
+  max-height: 500px;
+}
 
 #itemList li {
-    display: flex;
-    justify-content: space-between;
-    padding: 20px;
-    color: #F5F9E9;
-    font-family: 'Inter', sans-serif;
-    border-top: 1px black solid;
-    border-bottom: 1px black solid;
-    box-shadow: 10px 5px 20px grey;
-    margin-bottom: 1px;
-    font-weight: 600;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  color: #f5f9e9;
+  font-family: "Inter", sans-serif;
+  border-top: 1px black solid;
+  border-bottom: 1px black solid;
+  box-shadow: 10px 5px 20px grey;
+  margin-bottom: 2px;
+  font-weight: 600;
 }
 
 #itemList li h5 {
-    font-size: 1.2em;
+  font-size: 1.2em;
 }
 
-
-
-
 .detail {
-    margin-top: 10px;
-    text-align: center;
-    font-family: 'Inter', sans-serif;
-    font-weight: 600;
-    display: block;
+  margin-top: 10px;
+  text-align: center;
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  display: block;
 }
 
 .detail input[type="text"] {
@@ -90,7 +94,7 @@ h1 {
 .detail input[type="number"] {
   width: 100%;
   padding: 12px 20px;
-  margin: 8px 0;
+  margin: 10px 0;
   box-sizing: border-box;
 }
 .detail input[type="submit"] {
@@ -102,17 +106,17 @@ h1 {
   font-weight: 600;
   font-size: 1em;
   color: black;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
 }
-
-
 
 .item-detail {
-    border: 1px solid black;
-    text-align: left;
+  /* border: 1px solid black; */
+  text-align: left;
+  padding: 5px;
+  color: white;
 }
 
-.item-detail button{
+.item-detail #delete {
   background-color: #c62128;
   background-image: linear-gradient(147deg, #c62128 0%, #a00000 74%);
   border: none;
@@ -122,29 +126,57 @@ h1 {
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
+  display: block;
+  border: 1px solid black;
+}
+
+.item-detail #cancel,
+.item-detail #edit {
+  text-align: center;
+  background-color: none;
+  padding: 15px 40px;
+}
+
+.item-detail h4 {
+  font-size: 1.2em;
 }
 
 .item-detail p {
-    padding: 5px;
+  padding: 5px;
 }
 
-
-
+.buttons {
+    display: flex;
+    justify-content: space-around;
+}
 
 .green {
-    background-color: #045de9;
-    background-image: linear-gradient(315deg, #045de9 0%, #09c6f9 74%);
+  background-color: #045de9;
+  background-image: linear-gradient(315deg, #045de9 0%, #09c6f9 74%);
 }
 
 .red {
-    background-color: #c62128;
-    background-image: linear-gradient(147deg, #c62128 0%, #a00000 74%);
+  background-color: #c62128;
+  background-image: linear-gradient(147deg, #c62128 0%, #a00000 74%);
+}
+
+#current {
+  color: #045de9;
 }
 
 footer {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    text-align: center;
+  background-color: #537895;
+  background-image: linear-gradient(315deg, #09203f 50%, #537895 89%);
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  padding: 20px;
+  color: white;
+  font-family: "Inter", sans-serif;
+}
+
+body {
+  margin-bottom: 80px;
 }
