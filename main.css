@@ -1,0 +1,150 @@
+html, * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+h1 {
+    background-color: #537895;
+    background-image: linear-gradient(315deg, #537895 0%, #09203f 74%);
+    text-align: center;
+    padding: 20px;
+    color: white;
+    font-family: 'Inter', sans-serif;
+}
+
+
+
+
+.sideMenu {
+    padding: 30px 0px;
+    margin-top: 5px;
+}
+
+.headers, .values {
+    display: flex;
+    justify-content: space-around;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+}
+
+.headers {
+    font-size: 1.3em;
+}
+
+.values {
+    color: red;
+}
+
+
+
+#addItem {
+    padding: 20px;
+    text-align: center;
+    box-shadow: 10px 5px 25px grey;
+    margin: 5px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.3em;
+    color: black;
+    font-family: 'Inter', sans-serif;
+}
+
+
+
+
+#itemList li {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    color: #F5F9E9;
+    font-family: 'Inter', sans-serif;
+    border-top: 1px black solid;
+    border-bottom: 1px black solid;
+    box-shadow: 10px 5px 20px grey;
+    margin-bottom: 1px;
+    font-weight: 600;
+}
+
+#itemList li h5 {
+    font-size: 1.2em;
+}
+
+
+
+
+.detail {
+    margin-top: 10px;
+    text-align: center;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    display: block;
+}
+
+.detail input[type="text"] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+.detail input[type="number"] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+.detail input[type="submit"] {
+  padding: 15px 120px;
+  text-align: center;
+  box-shadow: 10px 5px 25px grey;
+  margin: 5px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1em;
+  color: black;
+  font-family: 'Inter', sans-serif;
+}
+
+
+
+.item-detail {
+    border: 1px solid black;
+    text-align: left;
+}
+
+.item-detail button{
+  background-color: #c62128;
+  background-image: linear-gradient(147deg, #c62128 0%, #a00000 74%);
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+.item-detail p {
+    padding: 5px;
+}
+
+
+
+
+.green {
+    background-color: #045de9;
+    background-image: linear-gradient(315deg, #045de9 0%, #09c6f9 74%);
+}
+
+.red {
+    background-color: #c62128;
+    background-image: linear-gradient(147deg, #c62128 0%, #a00000 74%);
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+}
