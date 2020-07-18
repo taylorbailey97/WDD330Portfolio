@@ -1,0 +1,39 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Great Hikes (dynamic DOM example)</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="./main.css"></link>
+  </head>
+  
+  <body>
+      <main>
+          <h1>Great Hikes</h1>
+          <ul id="hikes" class="hikeStyles">
+            <!-- your hike list should be build here. -->
+          </ul>
+          <div class="commentContainer" id="comments">
+            <h3>Comments: </h3>
+            <button type="submit" id="filterComments">Filter</button>
+            <label for="selectComments">Select Hike: </label>
+            <select name="selectComments" id="selectComments"></select>
+            <h4 id="showComments">Show Comments</h4>
+            <ul id="commentUL">
+
+            </ul>
+          </div>
+          <div class="addComment">
+            <label for="selectBox">Select Hike: </label>
+            <select name="selectBox" id="selectBox"></select>
+            <label for="content">Comment: </label>
+            <textarea name="content" id="commentText"></textarea>
+            <button type="submit" id="submitComment">Submit</button>
+          </div>
+        </main>
+        <script type="module" src="./hikes.js"></script>
+        <script type="module" src="./comments.js"></script>
+        <script type="module" src="main.js"></script>
+  </body>
+</html>

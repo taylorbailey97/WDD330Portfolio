@@ -25,11 +25,11 @@ function addItemForm() {
         <br>
         <a id="cancel">Cancel</a>
     `
-    // document.getElementById("submit").addEventListener('touchend', () => budget.newItem());
+    //document.getElementById("submit").addEventListener('touchend', () => budget.newItem());
     document.getElementById("submit").addEventListener('click', () => budget.newItem());
-    // document.getElementById("cancel").addEventListener('touchend', () => document.getElementById('detail').innerHTML = '');
+    //document.getElementById("cancel").addEventListener('touchend', () => document.getElementById('detail').innerHTML = '');
     document.getElementById("cancel").addEventListener('click', () => document.getElementById('detail').innerHTML = '');
 }
 
-{/* <br><label for="image">Add a reciept image?</label>
-        <input type="file" id="iImg" name="image" accept="image/png, image/jpeg"></input> */}
+/* <br><label for="image">Add a reciept image?</label>
+        <input type="file" id="iImg" name="image" accept="image/png, image/jpeg"></input> */

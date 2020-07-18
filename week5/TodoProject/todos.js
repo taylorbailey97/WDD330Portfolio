@@ -22,28 +22,27 @@ export default class todos {
         switch (this.show) {
             case 'Active':
                 if (!task.completed)    
-                    document.getElementById("todoList").querySelector('ul').appendChild(task.html(task.name, false));
+                    document.getElementById("todoList").querySelector('ul').appendChild(task.html(task.name, false, task.id));
                 break;
             case 'Completed':
                 if (task.completed)
-                    document.getElementById("todoList").querySelector('ul').appendChild(task.html(task.name, true));
+                    document.getElementById("todoList").querySelector('ul').appendChild(task.html(task.name, true, task.id));
                 break;
             default:
-                document.getElementById("todoList").querySelector('ul').appendChild(task.html(task.name, task.completed));
+                document.getElementById("todoList").querySelector('ul').appendChild(task.html(task.name, task.completed, task.id));
                 break;
         }
       });
       let list = this.todoList;
       var close = document.getElementsByClassName("close");
       for (let i = 0; i < close.length; i++) {
-        close[i].onclick = function() {
-          var div = this.parentElement;
+        close[i].onclick = (e) => {
+          var div = e.target.parentElement;
           div.style.display = "none";
           let taskId = div.innerHTML.match('<span class="close" id="(.*?)">')[1];
-          let task = list.find((element => {
-            return element.id === taskId;
-          }));
-          list.splice(list.indexOf(task), 1);
+          console.log(taskId);
+          this.todoList = list.filter(item => item.id != taskId);
+          console.log(this.todoList);
         }
       }
     }
@@ -58,7 +57,7 @@ export default class todos {
           "id" : this.getNextId(),
           "name" : inputValue,
           "completed" : false,
-          "html" : (name, completed) => {
+          "html" : (name, completed, id) => {
                 let li = document.createElement("li");
                 let t = document.createTextNode(name);
                 li.appendChild(t);
@@ -67,11 +66,12 @@ export default class todos {
                 if (completed)
                     li.className = 'checked';
                 span.className = "close";
-                span.id = this.getCurrId();
+                span.id = id;
                 span.appendChild(txt);
                 li.appendChild(span);
                 return li;
         }};
+        console.log(newTask.id);
         this.todoList.push(newTask);
         this.loadList();
       }

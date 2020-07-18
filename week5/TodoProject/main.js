@@ -12,12 +12,12 @@ function renderTodoList() {
     });
 }
 
-function deleteTask(name) {
-    index = taskList.indexOf(name);
-    console.log(index);
-    taskList.splice(index, 1);
-    renderTodoList();
-}
+// function deleteTask(name) {
+//     console.log(name);
+//     const newList = this.taskList.filter(task => task.name != name);
+//     // this.taskList = newList;
+//     renderTodoList();
+// }
 
 function renderTodoItem(task) {
   const item = document.createElement("li");

@@ -1,0 +1,45 @@
+html, * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+h1 {
+    background-color: gray;
+    padding: 30px;
+    text-align: center;
+    font-weight: 600;
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+
+li {
+    list-style: none;
+}
+
+h2 {
+    max-width: 100%;
+    background-color: darkgray;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin: 20px 0px;
+}
+
+.image {
+    width: 33%;
+    height: auto;
+}
+
+.container {
+    display: flex;
+    justify-content: space-around;
+}
+
+div {
+    display: inline-block;
+}
+
+img {
+    width: 100%;
+}
