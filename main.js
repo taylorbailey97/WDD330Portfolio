@@ -4,7 +4,7 @@ let budget = new Budget();
 
 budget.loadList();
 
-document.getElementById('addItem').addEventListener('click', addItemForm);
+document.getElementById('addItem').addEventListener('touchend', addItemForm);
 
 function addItemForm() {
     const div = document.getElementById('detail');
@@ -23,6 +23,6 @@ function addItemForm() {
         <br>
         <a id="cancel">Cancel</a>
     `
-    document.getElementById("submit").addEventListener('click', () => budget.newItem());
-    document.getElementById("cancel").addEventListener('click', () => document.getElementById('detail').innerHTML = '');
+    document.getElementById("submit").addEventListener('touchend', () => budget.newItem());
+    document.getElementById("cancel").addEventListener('touchend', () => document.getElementById('detail').innerHTML = '');
 }

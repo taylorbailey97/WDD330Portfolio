@@ -70,7 +70,7 @@ export default class Budget {
         <button>Delete</button>
         </div>
       `;
-      document.querySelector('button').addEventListener('click', () => {
+      document.querySelector('button').addEventListener('touchend', () => {
         this.removeItem(item.id);
       });
     }
