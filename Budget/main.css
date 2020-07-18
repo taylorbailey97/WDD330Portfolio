@@ -109,7 +109,7 @@ h1 {
 
 .item-detail {
     border: 1px solid black;
-    // text-align: left;
+    text-align: left;
 }
 
 .item-detail button{
