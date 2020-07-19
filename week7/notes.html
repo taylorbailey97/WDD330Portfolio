@@ -11,50 +11,15 @@ img {
 }
 </style>
 <body style="max-width: 500px;">
-    <a href="./landing_w3.html">back</a>
-    <h3>Here's the first exercise: </h3>
-    <h5>The code</h5>
-    <PRE>
-let calculator = {
-num: {},
-read() {
-  this.num.first = prompt("Please enter the first number");
-  this.num.second = prompt("Please enter the second number");
-},
-  
-sum() {
-  return parseInt(this.num.first) + parseInt(this.num.second);
-},
-  
-mul() {
-  return this.num.first * this.num.second;
-}
-  
-};
-    </PRE>
-    <p>Below is an image of the results: </p>
-    <img src="./example1.png" alt="example 1">
-
-    <h3>Here's the second exercise: </h3>
-    <h5>The code</h5>
-    <PRE>
-let ladder = {
-  step: 0,
-  up() {
-    this.step++;
-    return this;
-  },
-  down() {
-    this.step--;
-    return this;
-  },
-  showStep: function() { // shows the current step
-    alert( this.step );
-    return this;
-  }
-};
-    </PRE>
-    <p>Here are the results for this exercise</p>
-    <img src="./example2.png" alt="example 2">
+    <a href="./landing_w7.html">back</a>
+    <br><a href="./Exercises/facts/index.html">Click here for the first exercise</a>
+    <br><a href="./Exercises/sending/todo.html">Click here for the second exercise</a>
+    <h3>My notes: </h3>
+    <p>
+      IIFE - A function that is called immediately. This is helpful for cases where scope and garbage removal is helpful to remove variables that are not needed globally. To do so you simply add a pair of parentheses at the end of the function declaration. With ES6 code put within blocks also handle scope in the same way.
+      <br>Redefining functions - A function can redefine itself through its own block of code. This is done in the function itself by assigning its own variable to a new function. This can be useful for initialization purposes. Once we know the values that we have there’s no need to reevaluate them, instead we can have the function redefine itself with the new function based on the first observation.
+      <br>Pure functions - A function that does no destruction to any variables or methods outside its scope. It has to have at least one parameter and return something. These help to reduce confusion and bugs.
+    </p>
+    
 </body>
 </html>
